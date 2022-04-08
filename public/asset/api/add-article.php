@@ -6,18 +6,13 @@ require __DIR__ . '/../../../Model/MessageManager.php';
 
 
 
-
-use App\Model\Entity\Article;
-use App\Model\Manager\ArticleManager;
-use App\Model\Entity\User;
-
 session_start();
 
 $payload = file_get_contents('php://input');
 $payload = json_decode($payload);
 
 // On quitte si tous les paramètres ne sont pas la...
-if(empty($payload->title) || empty($payload->content)) {
+if(empty($payload->message) || empty($payload->content)) {
     // 400 = Bad Request.
     http_response_code(400);
     exit;
@@ -31,8 +26,8 @@ if(!isset($_SESSION['user'])) {
 }
 
 // On nettoye les données.
-$name = filter_var($payload->title, FILTER_SANITIZE_STRING);
-$message = trim(strip_tags(htmlentities(($payload->content))));
+$name = filter_var($payload->name, FILTER_SANITIZE_STRING);
+$message = trim(strip_tags(htmlentities(($payload->message))));
 
 $messages = new Message();
 $messages->setMessage($message);

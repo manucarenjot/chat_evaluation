@@ -49,7 +49,6 @@ class MessageManager {
 
             if (count($alert) > 0) {
                 $_SESSION['alert'] = $alert;
-                header('LOCATION: ?c=home');
             }
         }
     }
