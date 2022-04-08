@@ -9,6 +9,8 @@ class Router
             case 'logout':
                 $control->logout();
                 break;
+            case 'register':
+                $control->register();
             case 'login':
                 $control->login();
                 break;
