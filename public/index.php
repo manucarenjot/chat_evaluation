@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require __DIR__ . '/../require.php';
 
 $page = isset($_GET['c']) ? Router::secureUrl($_GET['c']) : 'home';

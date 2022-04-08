@@ -17,4 +17,9 @@ abstract class AbstractController
         require __DIR__ . '/../View/base.html.php';
         exit;
     }
+
+    public function getPost(): bool
+    {
+        return isset($_POST['send']);
+    }
 }

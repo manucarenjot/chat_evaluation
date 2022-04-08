@@ -1,3 +1,14 @@
+<?php
+if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
+    $alerts = $_SESSION['alert'];
+    unset($_SESSION['alert']);
+
+    foreach ($alerts as $alert) {
+        echo $alert;
+    }
+}
+?>
+
 <form method="post" action="?c=user&a=login" id="login">
     <table>
         <tr>

@@ -8,16 +8,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="">
 </head>
-<body>
+<body><?php
+
+?>
 <header>
     <nav>
         <ul>
             <li><a href="?c=home">Home</a></li>
             <li><a href="?c=user&a=register">Inscription</a></li>
             <li><a href="?c=user&a=login">login</a></li>
+            <li><a href="?c=user&a=profil">profil</a></li>
         </ul>
     </nav>
 </header>
+<?php
+
+
+?>
 
 <main class="container">
     <?= $html ?>

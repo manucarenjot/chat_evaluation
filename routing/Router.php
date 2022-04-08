@@ -14,8 +14,8 @@ class Router
             case 'login':
                 $control->login();
                 break;
-            case 'update-profil':
-                $control->update();
+            case 'profil':
+                $control->profil();
                 break;
             case 'messages':
                 $control->messages();
