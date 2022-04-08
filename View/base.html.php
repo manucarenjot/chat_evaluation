@@ -10,7 +10,13 @@
 </head>
 <body>
 <header>
-
+    <nav>
+        <ul>
+            <li>
+                <a href="?c=home">Home</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 
 <main class="container">
