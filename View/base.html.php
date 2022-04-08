@@ -9,7 +9,14 @@
     <link rel="stylesheet" href="">
 </head>
 <body><?php
+if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
+    $alerts = $_SESSION['alert'];
+    unset($_SESSION['alert']);
 
+    foreach ($alerts as $alert) {
+        echo $alert;
+    }
+}
 ?>
 <header>
     <nav>

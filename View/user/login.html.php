@@ -20,7 +20,7 @@ if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
             <td><input type="password" name="password" id="password" required></td>
         </tr>
         <tr>
-            <td><input type="submit" name="send"></td>
+            <td><input type="submit" name="login"></td>
         </tr>
     </table>
 </form>

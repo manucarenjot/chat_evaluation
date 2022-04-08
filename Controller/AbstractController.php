@@ -13,13 +13,11 @@ abstract class AbstractController
     {
         ob_start();
         require __DIR__ . '/../View/' . $template . '.html.php';
-        $html = ob_get_clean();
-        require __DIR__ . '/../View/base.html.php';
-        exit;
+
     }
 
-    public function getPost(): bool
+    public function getPost($send): bool
     {
-        return isset($_POST['send']);
+        return isset($_POST[$send]);
     }
 }

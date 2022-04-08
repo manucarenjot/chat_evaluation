@@ -18,7 +18,15 @@ class UserManager {
                 $_SESSION['alert'] = $alert;
                 header('LOCATION: ?c=home');
             }
+        }
+        else {
+            $alert = [];
+            $alert[] = '<div class="alert-error">Les informations ne sont pas correcte !</div>';
 
+            if (count($alert) > 0) {
+                $_SESSION['alert'] = $alert;
+                header('LOCATION: ?c=register');
+            }
         }
     }
 

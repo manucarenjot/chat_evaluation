@@ -1,23 +1,25 @@
 <?php
-class UserController extends AbstractController {
+class UserController extends AbstractController
+{
 
     public function index()
     {
 
     }
 
-    public function register() {
+    public function register()
+    {
+        $this->render('user/register');
 
-
-
-        if ($this->getPost()) {
+        if ($this->getPost('register')) {
             $username = trim(strip_tags($_POST['username']));
             $mail = trim(strip_tags(($_POST['mail'])));
             $password = ($_POST['password']);
             $passwordRepeat = trim(strip_tags($_POST['password-repeat']));
 
             $alert = [];
-            if (empty($username)) {
+
+            if (empty($_POST['username'])) {
                 $alert[] = '<div class="alert-error">Un des champs est vide</div>';
             }
 
@@ -43,6 +45,7 @@ class UserController extends AbstractController {
 
             if ($password !== $passwordRepeat) {
                 $alert[] = '<div class="alert-error">Les mots de passe ne correspondent pas !</div>';
+
             }
 
             if (count($alert) > 0) {
@@ -57,14 +60,12 @@ class UserController extends AbstractController {
                 UserManager::connectUserWithMail($mail, $password);
             }
         }
-        else {
-            $this->render('user/register');
-        }
-
     }
 
+
     public function login() {
-        if ($this->getPost()) {
+        $this->render('user/login');
+        if ($this->getPost('login')) {
             echo 'hey';
             $mail = trim(strip_tags(($_POST['mail'])));
             $password = ($_POST['password']);
@@ -72,9 +73,9 @@ class UserController extends AbstractController {
             UserManager::connectUserWithMail($mail, $password);
 
         }
-
-        $this->render('user/login');
     }
+
+
     public function profil() {
         $this->render('user/profil');
     }

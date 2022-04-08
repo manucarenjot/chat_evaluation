@@ -1,3 +1,14 @@
+<?php
+if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
+    $alerts = $_SESSION['alert'];
+    unset($_SESSION['alert']);
+
+    foreach ($alerts as $alert) {
+        echo $alert;
+    }
+}
+?>
+
 <form action="?c=user&a=register" method="post" id="register">
     <label for="username">Nom d'utilisateur :</label>
     <br>
@@ -15,5 +26,5 @@
     <br>
     <input type="password" name="password-repeat" id="password-repeat" required>
     <br>
-    <input type="submit" name="send" id="password" required>
+    <input type="submit" name="register" id="password" required>
 </form>

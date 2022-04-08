@@ -11,6 +11,7 @@ class Router
                 break;
             case 'register':
                 $control->register();
+                break;
             case 'login':
                 $control->login();
                 break;
