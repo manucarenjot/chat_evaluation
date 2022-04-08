@@ -15,20 +15,19 @@ class MessageManager {
 
 
             foreach ($datas as $data) {
-
                 $a = DecHex(mt_rand(0,15));
                 $b = DecHex(mt_rand(0,15));
                 $c = DecHex(mt_rand(0,15)); $d = DecHex(mt_rand(0,15));
                 $e = DecHex(mt_rand(0,15)); $f = DecHex(mt_rand(0,15));
                 $hexac = $a . $b . $c . $d . $e . $f;
+
                 ?>
+
                 <div class="message">
                     <span><?= date('H:i', strtotime('+2 hour', strtotime($data['date']))) ?></span>
                     <span><b style="color: <?=$hexac?>"><?=ucfirst($data['user_fk'])?></b> :</span>
                     <span><b><?= ucfirst($data['message'])?></b></span>
                 </div>
-
-
 <?php
             }
             ?>
