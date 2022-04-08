@@ -42,6 +42,9 @@ if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
     </nav>
 </header>
 <?php
+if ($_SESSION['user']) {
+    echo 'Bonjour ' . $_SESSION['user']['username'];
+}
 
 $page = isset($_GET['c']) ? Router::secureUrl($_GET['c']) : 'home';
 $action = isset($_GET['a']) ? Router::secureUrl($_GET['a']) : 'index';
@@ -49,7 +52,7 @@ $action = isset($_GET['a']) ? Router::secureUrl($_GET['a']) : 'index';
 
 switch ($page) {
     case 'home':
-        Router::route('HomeController');
+        Router::route('HomeController', $action);
         break;
     case 'user':
         Router::route('UserController', $action);
