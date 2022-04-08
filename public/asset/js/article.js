@@ -2,7 +2,6 @@
 const sendArticle = document.querySelector('#add-message');
 
 if(sendArticle) {
-
     sendArticle.addEventListener('click', () => {
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
