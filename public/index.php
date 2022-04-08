@@ -10,5 +10,7 @@ switch ($page) {
     case 'home':
         Router::route('HomeController');
         break;
+    case 'user':
+        Router::route('UserController', $action);
 
 }

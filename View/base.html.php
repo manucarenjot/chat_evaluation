@@ -15,6 +15,9 @@
             <li>
                 <a href="?c=home">Home</a>
             </li>
+            <li>
+                <a href="?c=user&a=register">Inscription</a>
+            </li>
         </ul>
     </nav>
 </header>
