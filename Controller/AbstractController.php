@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Controller;
 abstract class AbstractController
 {
     abstract public function index();
@@ -20,4 +20,6 @@ abstract class AbstractController
     {
         return isset($_POST[$send]);
     }
+
+
 }

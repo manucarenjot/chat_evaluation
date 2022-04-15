@@ -1,4 +1,5 @@
 <?php
+namespace App\Model;
 
 use App\Connect\Connect;
 use App\Model\entity\Message;
@@ -46,12 +47,14 @@ class MessageManager {
         $insert->bindValue(':message', $message->getMessage());
         $insert->bindValue(':user_fk', $message->getUserFk());
 
-        if ($insert->execute()) {
+        if ($result = $insert->execute()) {
+            $message->setId(Connect::getPDO()->lastInsertId());
             $alert[] = '<div class="alert-succes">Message envoyé !</div>';
 
             if (count($alert) > 0) {
                 $_SESSION['alert'] = $alert;
             }
         }
+        return $result;
     }
 }
