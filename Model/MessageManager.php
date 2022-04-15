@@ -1,6 +1,7 @@
 <?php
 
 use App\Connect\Connect;
+use App\Model\entity\Message;
 
 class MessageManager {
 
@@ -39,11 +40,11 @@ class MessageManager {
         }
     }
 
-    public static function sendMessage(string $message,string $name) {
+    public static function sendMessage(Message &$message) {
         $insert = Connect::getPDO()->prepare("INSERT INTO rpm03_messages (message, user_fk, date) VALUES (:message, :user_fk, NOW()) ");
 
-        $insert->bindValue(':message', $message);
-        $insert->bindValue(':user_fk', $name);
+        $insert->bindValue(':message', $message->getMessage());
+        $insert->bindValue(':user_fk', $message->getUserFk());
 
         if ($insert->execute()) {
             $alert[] = '<div class="alert-succes">Message envoyé !</div>';

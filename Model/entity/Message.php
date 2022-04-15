@@ -1,8 +1,11 @@
 <?php
+
+namespace App\Model\Entity;
+
 class Message {
-    public int $id;
-    public string $message;
-    public string $user_fk;
+    private int $id;
+    private string $message;
+    private string $user_fk;
 
     /**
      * @return int
@@ -15,9 +18,10 @@ class Message {
     /**
      * @param int $id
      */
-    public function setId(int $id): void
+    public function setId(int $id): self
     {
         $this->id = $id;
+        return $this;
     }
 
     /**
@@ -31,9 +35,10 @@ class Message {
     /**
      * @param string $message
      */
-    public function setMessage(string $message): void
+    public function setMessage(string $message): self
     {
         $this->message = $message;
+        return $this;
     }
 
     /**
@@ -47,9 +52,10 @@ class Message {
     /**
      * @param string $user_fk
      */
-    public function setUserFk(string $user_fk): void
+    public function setUserFk(string $user_fk): self
     {
         $this->user_fk = $user_fk;
+        return $this;
     }
 
 }

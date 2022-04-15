@@ -5,9 +5,16 @@ class HomeController extends AbstractController {
         $this->render('home/index');
         MessageManager::getMessage();
         if ($this->getPost('subMessage')) {
-            $message = htmlentities($_POST['message']);
+            $content = htmlentities($_POST['message']);
             $name = $_SESSION['user']['username'];
-            MessageManager::sendMessage($message, $name);
+
+            $message = new Message();
+            $message
+                 ->setMessage($content)
+                 ->setUserFk($name)
+                ;
+
+            MessageManager::sendMessage($message);
         }
     }
 
