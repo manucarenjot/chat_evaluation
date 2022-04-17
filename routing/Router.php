@@ -1,6 +1,5 @@
 <?php
 
-use App\Controller\API\MessageController;
 class Router
 {
 

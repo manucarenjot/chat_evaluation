@@ -13,4 +13,5 @@ require __DIR__ . '/Controller/MessageController.php';
 require __DIR__ . '/Model/UserManager.php';
 require __DIR__ . '/Model/MessageManager.php';
 
-require __DIR__ . '/Controller/API/MessageController.php';
+require __DIR__ . '/routing/ApiRouter.php';
+require __DIR__ . '/Controller/api/MessageController.php';

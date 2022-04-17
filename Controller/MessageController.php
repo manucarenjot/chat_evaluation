@@ -8,7 +8,7 @@ class MessageController extends \App\Controller\AbstractController
 
     public function index()
     {
-        // TODO: Implement index() method.
+        $this->render('home/chat');
     }
 
     public function AddMessage()
