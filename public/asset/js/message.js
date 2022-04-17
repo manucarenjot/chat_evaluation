@@ -1,6 +1,5 @@
 
 const sendArticle = document.querySelector('#add-message');
-
 if(sendArticle) {
     sendArticle.addEventListener('click', () => {
         const xhr = new XMLHttpRequest();
@@ -10,7 +9,7 @@ if(sendArticle) {
             message: document.querySelector('#send-message').value
         };
 
-        xhr.open('post', '/api/add-Message.php');
+        xhr.open('post', '?c=api&a=add-message');
 
         xhr.onload = function() {
             if(xhr.status === 404) {
@@ -29,7 +28,10 @@ if(sendArticle) {
         }
 
         xhr.send(JSON.stringify(body));
+
     });
 }
+
+
 
 

@@ -13,10 +13,7 @@ $payload = file_get_contents('php://input');
 $payload = json_decode($payload);
 
 
-if(empty($payload->message)) {
-    http_response_code(400);
-    exit;
-}
+
 
 
 if(!isset($_SESSION['user'])) {
@@ -44,3 +41,4 @@ if (MessageManager::sendMessage($messages)) {
 
 http_response_code(200);
 exit;
+

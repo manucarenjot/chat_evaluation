@@ -11,7 +11,7 @@ class ApiRouter
     {
         switch($action)
         {
-            case 'chat':
+            case 'add-message':
                 (new MessageController())->addMessage();
                 break;
             default:
