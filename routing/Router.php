@@ -10,16 +10,13 @@ class Router
         $control = new $controller();
         $control->index();
         switch ($action) {
-            case 'logout':
-                $control->logout();
-                break;
             case 'register':
                 $control->register();
                 break;
             case 'login':
                 $control->login();
                 break;
-            case 'profil':
+            case 'logout':
                 $control->profil();
                 break;
             case 'add-message':

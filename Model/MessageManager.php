@@ -8,11 +8,11 @@ class MessageManager {
 
 
     public static function getMessage() {
-        $select = Connect::getPDO()-> prepare("SELECT * FROM rpm03_messages ORDER BY date desc LIMIT 10 ");
+        $select = Connect::getPDO()-> prepare("SELECT * FROM rpm03_messages ORDER BY date desc LIMIT 25 ");
 
         if ($select->execute()) {
             $datas = $select->fetchAll();?>
-            <div class="chat"></div>
+            <div class="chat">
             <?php
 
 
@@ -33,8 +33,18 @@ class MessageManager {
 <?php
             }
             ?>
+                <?php
+if (isset($_SESSION['user'])) {
+?>
+<form method="post" action="?c=chat&a=add-message">
+                <input type="text" name="message" id="send-message">
+                <input type="submit" name="subMessage" id="add-message" value="➤">
+            </form>
 
+
+            </div>
 <?php
+        }
         }
     }
 

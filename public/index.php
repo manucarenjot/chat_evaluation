@@ -21,7 +21,7 @@ if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="asset/css/style.css">
 </head>
 <body><?php
 if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
@@ -33,21 +33,26 @@ if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
     }
 }
 ?>
-<header>
-    <nav>
-        <ul>
-            <li><a href="?c=home">Home</a></li>
-            <li><a href="?c=chat&a=add-message">chat</a></li>
-            <li><a href="?c=user&a=register">Inscription</a></li>
-            <li><a href="?c=user&a=login">login</a></li>
-            <li><a href="?c=user&a=profil">profil</a></li>
-        </ul>
-    </nav>
-</header>
+<div class="menu">
+            <a href="?c=chat&a=add-message">chat</a>
+            <?php
+            if (!isset($_SESSION['user'])) {
+            ?>
+            <a href="?c=user&a=register">Inscription</a>
+            <a href="?c=user&a=login">login</a>
+            <?php
+            }
+            if (isset($_SESSION['user'])) {
+            ?>
+            <a href="?c=user&a=logout">logout</a>
+            <?php
+            }
+            ?>
+</div>
 <?php
 
 if (isset($_SESSION['user'])) {
-    echo 'Bonjour ' . $_SESSION['user']['username'];
+    echo '<div class="alert-succes">Bonjour ' . $_SESSION['user']['username']. '</div>';
 }
 
 

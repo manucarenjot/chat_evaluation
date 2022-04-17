@@ -81,6 +81,6 @@ class UserController extends AbstractController
 
 
     public function profil() {
-        $this->render('user/profil');
+        $this->render('user/logout');
     }
 }
