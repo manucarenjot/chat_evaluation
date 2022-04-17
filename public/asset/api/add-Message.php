@@ -1,11 +1,13 @@
 <?php
+use App\Model\entity\Message;
+use App\Model\MessageManager;
+
 require __DIR__ . '/../../../Engine/Config.php';
 require __DIR__ . '/../../../Engine/Connect.php';
 require __DIR__ . '/../../../Model/entity/Message.php';
 require __DIR__ . '/../../../Model/MessageManager.php';
 
-use App\Model\entity\Message;
-use App\Model\MessageManager;
+
 
 session_start();
 
@@ -13,7 +15,10 @@ $payload = file_get_contents('php://input');
 $payload = json_decode($payload);
 
 
-
+if(empty($payload->message)) {
+    http_response_code(400);
+    exit;
+}
 
 
 if(!isset($_SESSION['user'])) {
@@ -41,4 +46,3 @@ if (MessageManager::sendMessage($messages)) {
 
 http_response_code(200);
 exit;
-
