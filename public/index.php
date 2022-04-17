@@ -42,7 +42,7 @@ if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
     </nav>
 </header>
 <?php
-if ($_SESSION['user']) {
+if (isset($_SESSION['user'])) {
     echo 'Bonjour ' . $_SESSION['user']['username'];
 }
 

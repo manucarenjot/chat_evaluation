@@ -1,4 +1,6 @@
 <?php
+
+use App\Controller\API\MessageController;
 class Router
 {
 
@@ -18,8 +20,9 @@ class Router
             case 'profil':
                 $control->profil();
                 break;
-
-
+            case 'chat':
+                $control->addMessage();
+                break;
         }
     }
 

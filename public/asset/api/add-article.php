@@ -4,7 +4,8 @@ require __DIR__ . '/../../../Engine/Connect.php';
 require __DIR__ . '/../../../Model/entity/Message.php';
 require __DIR__ . '/../../../Model/MessageManager.php';
 
-
+use App\Model\entity\Message;
+use App\Model\MessageManager;
 
 session_start();
 
@@ -34,7 +35,7 @@ $messages->setMessage($message);
 $messages->setUserFk($name);
 
 // On tente l'enregistrement.
-if (MessageManager::sendMessage($message, $name)) {
+if (MessageManager::sendMessage($messages)) {
     // Si on le souhaite, on peut renvoyer l'article avec son ID (souvenez vous qu'on lui donne son id après enregistrement)
     echo json_encode([
         'id' => $messages->getId(),
