@@ -22,7 +22,7 @@ class Router
             case 'profil':
                 $control->profil();
                 break;
-            case 'chat':
+            case 'add-message':
                 $control->addMessage();
                 break;
         }

@@ -15,7 +15,6 @@ class ApiRouter
                 (new MessageController())->addMessage();
                 break;
             default:
-                // 404 = Not Found.
                 http_response_code(404);
         }
 

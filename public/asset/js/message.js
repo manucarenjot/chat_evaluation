@@ -10,7 +10,7 @@ if(sendArticle) {
             message: document.querySelector('#send-message').value
         };
 
-        xhr.open('post', '/api/add-article.php');
+        xhr.open('post', '/api/add-Message.php');
 
         xhr.onload = function() {
             if(xhr.status === 404) {

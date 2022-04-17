@@ -36,7 +36,8 @@ if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
 <header>
     <nav>
         <ul>
-            <li><a href="?c=home&a=chat">Home</a></li>
+            <li><a href="?c=home">Home</a></li>
+            <li><a href="?c=chat&a=add-message">chat</a></li>
             <li><a href="?c=user&a=register">Inscription</a></li>
             <li><a href="?c=user&a=login">login</a></li>
             <li><a href="?c=user&a=profil">profil</a></li>
@@ -61,8 +62,10 @@ switch ($page) {
     case 'user':
         Router::route('UserController', $action);
         break;
+    case 'chat':
+        Router::route('MessageController', $action);
+        break;
     case 'api':
-        // Prise en charge du cas ou on a recu un appel API
         ApiRouter::route($action);
         break;
 
@@ -72,6 +75,6 @@ switch ($page) {
 <footer>
 
 </footer>
-<script src=""></script>
+<script src="asset/js/message.js"></script>
 </body>
 </html>

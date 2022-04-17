@@ -1,9 +1,11 @@
 <?php
 
+
+use App\Controller\AbstractController;
 use App\Model\Entity\Message;
 use App\Model\MessageManager;
 
-class MessageController extends \App\Controller\AbstractController
+class MessageController extends AbstractController
 {
 
     public function index()
