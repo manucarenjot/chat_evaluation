@@ -15,7 +15,7 @@ $payload = file_get_contents('php://input');
 $payload = json_decode($payload);
 
 
-if(empty($payload->message)) {
+if(empty($payload->content)) {
     http_response_code(400);
     exit;
 }

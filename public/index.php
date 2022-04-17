@@ -23,16 +23,7 @@ if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
     <title>Document</title>
     <link rel="stylesheet" href="asset/css/style.css">
 </head>
-<body><?php
-if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
-    $alerts = $_SESSION['alert'];
-    unset($_SESSION['alert']);
-
-    foreach ($alerts as $alert) {
-        echo $alert;
-    }
-}
-?>
+<body>
 <div class="menu">
             <a href="?c=chat&a=add-message">chat</a>
             <?php
@@ -51,8 +42,13 @@ if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
 </div>
 <?php
 
-if (isset($_SESSION['user'])) {
-    echo '<div class="alert-succes">Bonjour ' . $_SESSION['user']['username']. '</div>';
+if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
+    $alerts = $_SESSION['alert'];
+    unset($_SESSION['alert']);
+
+    foreach ($alerts as $alert) {
+        echo $alert;
+    }
 }
 
 
