@@ -1,4 +1,7 @@
 <?php
+namespace App\Routing;
+
+use App\Controller\AbstractController;
 
 class Router
 {

@@ -1,4 +1,5 @@
 <?php
+use App\Routing\Router;
 use App\Routing\ApiRouter;
 session_start();
 require __DIR__ . '/../require.php';
@@ -43,9 +44,11 @@ if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
     </nav>
 </header>
 <?php
+
 if (isset($_SESSION['user'])) {
     echo 'Bonjour ' . $_SESSION['user']['username'];
 }
+
 
 $page = isset($_GET['c']) ? Router::secureUrl($_GET['c']) : 'home';
 $action = isset($_GET['a']) ? Router::secureUrl($_GET['a']) : 'index';
