@@ -2,7 +2,7 @@
 use App\Routing\Router;
 use App\Routing\ApiRouter;
 session_start();
-require __DIR__ . '/../require.php';
+require __DIR__ . '/require.php';
 if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
     $alerts = $_SESSION['alert'];
     unset($_SESSION['alert']);
@@ -21,7 +21,7 @@ if (isset($_SESSION['alert']) && count($_SESSION['alert']) > 0) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="public/asset/css/style.css">
 </head>
 <body>
 <div class="menu">
@@ -76,6 +76,6 @@ switch ($page) {
 <footer>
 
 </footer>
-<script src="asset/js/message.js"></script>
+<script src="public/asset/js/message.js"></script>
 </body>
 </html>

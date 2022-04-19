@@ -25,7 +25,9 @@ class MessageManager {
 
                 ?>
 
-                <div class="message">
+                <div class="message" style="word-break: break-word;
+    white-space: normal;
+    font-size: medium;">
                     <span><?= date('H:i', strtotime('+2 hour', strtotime($data['date']))) ?></span>
                     <span><b style="color: <?=$hexac?>"><?=ucfirst($data['user_fk'])?></b> :</span>
                     <span><b><?= ucfirst($data['message'])?></b></span>

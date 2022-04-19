@@ -83,6 +83,11 @@ input[type=submit] {
     -moz-animation: fade 15s steps(90) forwards;
     -o-animation: fade 15s steps(90) forwards;;
 }
+.message {
+    word-break: break-word;
+    white-space: normal;
+    font-size: medium;
+}
 
 @keyframes fade {
     0% {margin-top: -10px;opacity:0;}
